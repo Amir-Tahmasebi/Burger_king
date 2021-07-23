@@ -1,0 +1,172 @@
+@import './../../assets/scss/mixin';
+@import './../../assets/scss/variable';
+
+.step-progress-bar {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 90px;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        top: 130%;
+        left: 0;
+        border-bottom: 2px dotted rgb(196, 196, 196);
+    }
+
+    &:last-child {
+        margin-bottom: 20px;
+
+        &::after {
+            content: '';
+            width: 0;
+            position: relative;
+            top: 0;
+            left: 0;
+            border-bottom: none;
+        }
+    }
+
+    .question {
+        margin-right: 6px;
+        color: $gray;
+        font-size: 20px;
+    }
+
+    .custom-text {
+        color: rgb(9, 0, 134);
+    }
+
+    .imoji {
+        font-size: 30px
+    }
+
+    .numberic-wrapper {
+        @include flex-position(flex-start);
+        text-align: center;
+        margin: 20px 0 50px 0;
+
+        p {
+            flex-basis: 60%;
+            @include flex-position;
+            font-size: 13px;
+            color: $gray-light;
+
+            section {
+                position: relative;
+                padding-bottom: 8px;
+
+                &:hover {
+                    &::after {
+                        content: '';
+                        height: 2px;
+                        width: 100%;
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    transition: 1s ease;
+                    position: absolute;
+                    bottom: 0;
+                    left: 45%;
+                    transform: translate(-50%);
+                    height: 2px;
+                    width: 40px;
+                    background-color: $orange;
+                }
+
+                input {
+                    border: none;
+                    color: $orange;
+                    font-size: 16px;
+                    margin-right: 10px;
+                    width: 100px;
+                    text-align: center;
+
+                    &::-webkit-input-placeholder {
+                        text-align: center;
+                        color: $orange;
+                        font-size: 14px;
+                    }
+
+                    &:focus-visible {
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        .counter {
+            flex-basis: 40%;
+
+            strong {
+                color: $green;
+                padding: 12px 26px;
+                font-size: 20px
+            }
+
+            button {
+                @include btn($orange, $orange, $white);
+                font-size: 20px;
+                padding: 5px 25px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:992px) {
+    .step-progress-bar {
+        width: 95%;
+
+        &::after {
+            content: '';
+            width: 100%;
+            position: absolute;
+            top: 110% !important;
+            left: 0;
+            border-bottom: 2px dotted rgb(196, 196, 196);
+        }
+
+        .question {
+            font-size: 16px;
+            text-align: justify;
+        }
+        .imoji {
+            font-size: 15px
+        }
+
+        .numberic-wrapper {
+            @include flex-position(center, center, column);
+
+            p {
+                text-align: justify;
+                flex-basis: 100%;
+                flex-wrap: wrap;
+                font-size: 13px;
+                @include flex-position(flex-start, center);
+
+                section {
+                    flex-basis: 80%;
+                    width: 80%;
+                    margin: 0 auto 25px auto;
+                    input {
+                        margin-top: 10px;
+                        width: 100%;
+                        text-align: center;
+                        font-size: 13px;
+
+                        &::-webkit-input-placeholder {
+                            text-align: center;
+                            font-size: 13px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

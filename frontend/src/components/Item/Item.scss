@@ -1,0 +1,54 @@
+@import './../../assets/scss/_variable';
+@import './../../assets/scss/_mixin';
+
+#item {
+    @include flex-position(center, center, column);
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    svg {
+        color: $green;
+        font-size: 60px;
+    }
+
+    h3 {
+        margin: 10px 0 7px 0;
+        color: $gray;
+        font-weight: 800;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 13%;
+            left: 49%;
+            background: linear-gradient(to right, $orange 75%, $green);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    }
+
+    p {
+        text-align: justify;
+        color: $gray-light;
+        font: 14px;
+        font-weight: 300;
+    }
+}
+
+@media screen and (max-width:992px){
+    svg {
+        font-size: 50px;
+    }
+    h3{
+        &:after {
+            
+            top: 0 !important;
+            left: 46% !important;
+        }
+    }
+    p{
+        font: 12px;
+    }
+}

@@ -1,0 +1,45 @@
+@import './assets/scss/_font.scss'; 
+
+body {
+    direction: rtl;
+}
+
+body,
+* {
+    font-family: IRANSans;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+
+    list-style: none;
+}
+
+p {
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (min-width:992px) {
+ .d-none-lg{
+    display: none ;
+ }
+ .d-block-lg{
+    display: block ;
+ }   
+}
+@media screen and (max-width:992px) {
+    .d-none{
+        display: none !important;
+    }
+    .d-block{
+        display: block ;
+    }
+}

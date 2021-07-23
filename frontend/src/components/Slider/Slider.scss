@@ -1,0 +1,87 @@
+@import './../../assets/scss/_variable';
+@import './../../assets/scss/_mixin';
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+
+    .wrapper {
+        width: 100%;
+        height: 100% !important;
+
+        .carousel-initialized {
+            height: 100% !important;
+            width: 100% !important;
+
+            .carousel-track {
+                height: 100% !important;
+                width: 100% !important;
+
+                .carousel-item {
+                    height: 100% !important;
+                    width: 100% !important;
+
+                    .carousel-row {
+                        height: 100% !important;
+                        width: 100% !important;
+
+                        .custom-slider {
+                            width: 100%;
+                            height: 100%;
+
+                            img {
+                                width: 100%;
+                                height: 100% !important;
+                                // height: auto;
+                                filter: brightness(.6);
+                                background-size: cover;
+                            }
+
+                            .content {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                color: $white;
+                                height: 35%;
+                                @include flex-position(space-around, center, column);
+
+                                h3 {
+                                    font-size: 40px;
+                                }
+
+                                p {
+                                    margin: 15px 0;
+                                    font-size: 20px;
+                                    text-align: center;
+                                }
+
+                                .btn-group {
+                                    @include flex-position;
+
+                                    a {
+                                        margin: 0 4px;
+
+                                        &:first-child {
+                                            @include btn($green, $green, transparent)
+                                        }
+
+                                        &:last-child {
+                                            @include btn($orange, $orange, transparent)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:992px) {
+    .slider-container{
+        display: none !important;
+    }
+}

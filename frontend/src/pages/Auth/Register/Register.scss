@@ -1,0 +1,73 @@
+@import "./../../../assets/scss/_mixin";
+@import "./../../../assets/scss/_variable";
+
+#register {
+    width: 100%;
+    min-height: 100vh;
+    @include flex-position;
+    background-color: $silver;
+
+    form {
+        background-color: $white;
+        width: 100%;
+        max-width: 450px;
+        min-height: 450px;
+        @include flex-position(center, flex-start);
+        border-radius: 10px;
+
+        .wrapper {
+            width: 80%;
+            margin: 30px auto;
+
+            h1 {
+                color: $gray;
+                font-size: 32px;
+                font-weight: 700;
+                margin-bottom: 35px;
+
+            }
+
+            .wrapper-field {
+                width: 100%;
+                height: 90px;
+
+                // margin: px 0  ;
+                input {
+                    width: 100%;
+                    border: none;
+                    padding: 20px 15px;
+                    background-color: $silver;
+                    color: $gray-light;
+                    border-radius: 5px;
+
+                    &:focus-visible {
+                        outline: none;
+                    }
+                }
+
+                .error-msg {
+                    font-size: 12px;
+                    color: red;
+                    margin-right: 5px;
+                }
+            }
+
+            button {
+                margin-top: 25px;
+                @include btn($orange, $orange, $white);
+                width: 100%;
+            }
+
+            p {
+                text-align: center;
+                margin: 20px 0 0 0;
+                color: $gray-light;
+
+                a {
+                    color: $orange;
+                    margin: 0 8px;
+                }
+            }
+        }
+    }
+}

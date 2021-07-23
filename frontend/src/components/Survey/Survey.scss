@@ -1,0 +1,32 @@
+@import './../../assets/scss/mixin';
+@import './../../assets/scss/variable';
+
+.survey-container {
+    width: 80%;
+    margin: 60px auto 90px auto;
+
+    .step-one {
+        .step-one-btn {
+            width: 80%;
+            margin: 0 auto;
+            @include flex-position(flex-end);
+
+            button {
+                @include btn($orange, $orange, $white);
+            }
+        }
+
+    }
+    .step-two {
+        .step-two-btn {
+            width: 80%;
+            margin: 0 auto;
+            @include flex-position(flex-end);
+
+            button {
+                @include btn($orange, $orange, $white);
+            }
+        }
+
+    }
+}
